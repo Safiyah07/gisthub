@@ -12,6 +12,11 @@ module.exports = {
 				water1: "url('/water1.webp')",
 			},
 		},
+		screens: {
+			sm: { max: "479px" },
+			md: { min: "480px", max: "880px" },
+			lg: { min: "881px" },
+		},
 	},
 	plugins: [],
 };

@@ -31,8 +31,8 @@ export default function Home() {
 					</p>
 				</div>
 
-				<div className="flex justify-between">
-					<div className="relative w-[49%]">
+				<div className="flex flex-col justify-between gap-10 lg:flex-row">
+					<div className="relative w-full lg:w-[49%]">
 						<div className="rounded-md h-[300px] bg-power1 bg-cover "></div>
 						<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 						<p
@@ -42,7 +42,7 @@ export default function Home() {
 							Power (AEDC)
 						</p>
 					</div>
-					<div className="relative w-[49%]">
+					<div className="relative w-full lg:w-[49%]">
 						<div className="rounded-md h-[300px] bg-water1 bg-cover "></div>
 						<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 						<p
