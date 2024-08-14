@@ -1,5 +1,6 @@
 import { Palanquin } from "next/font/google";
 import "./globals.css";
+import Footer from "@/component/Footer";
 
 const palanquin = Palanquin({ weight: "400", subsets: ["latin"] });
 
@@ -12,7 +13,10 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			{/* 			<body className={`${palanquin.className}, uppercase`}> */}
-			<body className={palanquin.className}>{children}</body>
+			<body className={palanquin.className}>
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }
