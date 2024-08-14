@@ -1,9 +1,7 @@
 import Image from "next/image";
 import { Palanquin_Dark } from "next/font/google";
 import Logo from "../../public/gih-logo.png";
-import Power from "../../public/power1.webp";
-import Water from "../../public/water1.webp";
-// import icon from "../../public/gih-icon.webp";
+import Link from "next/link";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
@@ -16,10 +14,6 @@ export default function Home() {
 						src={Logo}
 						alt="logo"
 					/>
-					{/* <Image
-						src={icon}
-						alt="logo"
-					/> */}
 				</div>
 				<div className="w-3/4 m-auto text-center lg:w-2/5">
 					<h1 className={palanquin.className}>
@@ -35,22 +29,24 @@ export default function Home() {
 					<div className="relative w-full lg:w-[49%]">
 						<div className="rounded-md h-[300px] bg-power1 bg-cover "></div>
 						<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
-						<p
+						<Link
+							href={"/aedc"}
 							style={{ textShadow: "3px 1px 5px black" }}
-							className="absolute inset-0 flex items-center justify-center font-medium text-white text-7xl"
+							className="absolute inset-0 flex items-center justify-center text-5xl font-medium text-white lg:text-7xl"
 						>
 							Power (AEDC)
-						</p>
+						</Link>
 					</div>
 					<div className="relative w-full lg:w-[49%]">
 						<div className="rounded-md h-[300px] bg-water1 bg-cover "></div>
 						<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
-						<p
+						<Link
+							href={"/water-board"}
 							style={{ textShadow: "3px 1px 5px black" }}
-							className="absolute inset-0 flex items-center justify-center font-medium text-white text-7xl"
+							className="absolute inset-0 flex items-center justify-center text-5xl font-medium text-white lg:text-7xl"
 						>
 							Water Board
-						</p>
+						</Link>
 					</div>
 				</div>
 			</section>

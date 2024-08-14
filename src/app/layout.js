@@ -1,6 +1,6 @@
 import { Palanquin } from "next/font/google";
 import "./globals.css";
-import Footer from "@/component/Footer";
+import Footer from "@/components/Footer";
 
 const palanquin = Palanquin({ weight: "400", subsets: ["latin"] });
 
