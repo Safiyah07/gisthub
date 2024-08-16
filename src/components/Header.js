@@ -27,13 +27,7 @@ export default function Header() {
 				onClick={toggleTheme}
 				className="transition-all duration-300 ease-in-out"
 			>
-				{theme === "light" ? (
-					// Moon
-					<IoIosMoon size={30} />
-				) : (
-					// Sun
-					<IoIosSunny size={30} />
-				)}
+				{theme === "light" ? <IoIosMoon size={30} /> : <IoIosSunny size={30} />}
 			</button>
 		</div>
 	);
