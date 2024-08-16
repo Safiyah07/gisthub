@@ -11,6 +11,7 @@ export default function Home() {
 			// className="m-10"
 		>
 			<section className="flex flex-col gap-10 p-10 text-center">
+				{/* text */}
 				<div className="m-auto text-xl text-center lg:w-3/5">
 					<h1 className={`${palanquin.className} mb-5`}>
 						What&apos;s the scoop you&apos;re after today?
@@ -21,6 +22,7 @@ export default function Home() {
 					</p>
 				</div>
 
+				{/* images */}
 				<div className="flex flex-col justify-between gap-10 lg:flex-row">
 					<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700">
 						<div className="rounded-md h-[300px] bg-power1 bg-cover"></div>
