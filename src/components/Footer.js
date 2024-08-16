@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Palanquin_Dark } from "next/font/google";
 import Logo from "../../public/logo.png";
+import { IoLogoFacebook } from "react-icons/io";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
@@ -37,28 +40,29 @@ export default function Footer() {
 						</h1>
 						<br className="sm:hidden" />
 						<a
-							className="transition-all duration-500 ease-in-out hover:text-black/50"
+							className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50"
 							href={`/`}
 						>
-							Facebook
+							<IoLogoFacebook /> Facebook
 						</a>
 						<a
-							className="transition-all duration-500 ease-in-out hover:text-black/50"
+							className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50"
 							href={`/`}
 						>
+							<AiFillInstagram />
 							Instagram
 						</a>
 						<a
-							className="transition-all duration-500 ease-in-out hover:text-black/50"
+							className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50"
 							href="#services"
 						>
-							X
+							<FaXTwitter /> X
 						</a>
 						<a
-							className="transition-all duration-500 ease-in-out hover:text-black/50"
+							className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50"
 							href="#about"
 						>
-							YouTube
+							<FaYoutube /> YouTube
 						</a>
 					</div>
 				</section>
