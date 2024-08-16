@@ -2,16 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Palanquin_Dark } from "next/font/google";
-import Logo from "../../public/gih-logo.png";
+import Logo from "../../public/logo.png";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
 export default function Footer() {
 	return (
-		<footer className="px-10 sm:text-center">
+		<footer className="px-10 pt-10 border-t-2 mt-28 sm:text-center border-grey">
 			<div className="flex justify-between w-full gap-20 md:flex-wrap sm:flex-col">
-				<section className="flex flex-col lg:w-[35%]">
-					<div className="w-48 pb-5 sm:m-auto">
+				<section className="flex flex-col gap-2 pt-3 lg:w-[35%]">
+					<div className="w-48 sm:m-auto">
 						<Link
 							href="/"
 							className=""
@@ -23,6 +23,7 @@ export default function Footer() {
 							/>
 						</Link>
 					</div>
+					<br className="sm:hidden" />
 					<p className="">
 						Stay informed with the latest news and updates on AEDC and Water
 						Board. Get real-time information on power and water supply, outages,
@@ -65,9 +66,14 @@ export default function Footer() {
 					<div className="flex flex-col gap-2 pt-3">
 						<h1 className={palanquin.className}>Menu</h1>
 						<br className="sm:hidden" />
-						<p>Power AEDC</p>
+						<p>Power (AEDC)</p>
 						<p>Water Board</p>
 					</div>
+				</section>
+				<section>
+					<h1 className={`${palanquin.className} pt-3`}>
+						<a href="#top">Back to top</a>
+					</h1>
 				</section>
 			</div>
 			<p className="mt-10 mb-5">

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	scroll-behavior: smooth;
+	will-change: scroll-position;
+}
+
+body {
+	background: #fffef9;
+}
 /* :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
@@ -17,7 +25,7 @@
 } */
 
 /* body {
-	color: rgb(var(--foreground-rgb));
+	color: #fffef9;
 	background: linear-gradient(
 			to bottom,
 			transparent,

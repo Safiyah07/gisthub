@@ -7,6 +7,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				orange: "#ff914d",
+				grey: "#828282",
+			},
 			backgroundImage: {
 				power1: "url('/power1.webp')",
 				water1: "url('/water1.webp')",
