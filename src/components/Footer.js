@@ -13,6 +13,7 @@ export default function Footer() {
 	return (
 		<footer className="px-10 pt-10 border-t-2 mt-28 sm:text-center border-grey">
 			<div className="flex justify-between w-full gap-20 md:flex-wrap sm:flex-col">
+				{/* logo and text */}
 				<section className="flex flex-col gap-2 pt-3 lg:w-[35%]">
 					<div className="w-48 sm:m-auto">
 						<Link
@@ -33,6 +34,7 @@ export default function Footer() {
 						and restoration efforts. Your reliable source for essential updates.
 					</p>
 				</section>
+				{/* Follow us */}
 				<section>
 					<div className="flex flex-col gap-2 pt-3">
 						<h1 className={`${palanquin.className} text-lg font-extrabold`}>
@@ -66,6 +68,7 @@ export default function Footer() {
 						</a>
 					</div>
 				</section>
+				{/* menu */}
 				<section>
 					<div className="flex flex-col gap-2 pt-3">
 						<h1 className={palanquin.className}>Menu</h1>
@@ -74,6 +77,7 @@ export default function Footer() {
 						<p>Water Board</p>
 					</div>
 				</section>
+				{/* back to top button */}
 				<section>
 					<h1 className={`${palanquin.className} pt-3`}>
 						<a href="#top">Back to top</a>
