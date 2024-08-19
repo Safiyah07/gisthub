@@ -11,10 +11,10 @@ export default function Header() {
 	const { theme, toggleTheme } = useContext(ThemeContext);
 
 	return (
-		<div className={`flex justify-between p-10`}>
+		<div className={`flex justify-between p-10 sm:px-5`}>
 			<Link
 				href="/"
-				className="w-40"
+				className="w-40 sm:w-32"
 			>
 				<Image
 					src={Logo}
