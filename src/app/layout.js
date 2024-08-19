@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 const palanquin = Palanquin({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
-	title: "The Gist",
+	title: "Gisthub",
 	description: "The latest news blog for AEDC and Water Board of Nigeria",
 };
 

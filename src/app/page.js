@@ -1,8 +1,16 @@
 import { Palanquin_Dark } from "next/font/google";
 import Link from "next/link";
-import Header from "@/components/Header";
+import { gsap } from "gsap";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
+
+// gsap.from(".animated-class", {
+// 	opacity: 1,
+// 	y: 0,
+// 	duration: 1,
+// 	stagger: 0.2,
+// 	delay: 0.5, // Optional delay before the animation starts
+// });
 
 export default function Home() {
 	return (
@@ -13,10 +21,12 @@ export default function Home() {
 			<section className="flex flex-col gap-10 p-10 text-center">
 				{/* text */}
 				<div className="m-auto text-xl text-center lg:w-3/5">
-					<h1 className={`${palanquin.className} mb-5`}>
+					<h1
+						className={`${palanquin.className} animated-class lg:text-[2rem] mb-5`}
+					>
 						What&apos;s the scoop you&apos;re after today?
 					</h1>
-					<p className="w-3/4 m-auto text-grey sm:w-full">
+					<p className="w-3/4 m-auto animated-class text-grey sm:w-full">
 						We’re dishing out the hottest updates from AEDC and Water Board —
 						don’t blink!
 					</p>
