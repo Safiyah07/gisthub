@@ -17,7 +17,7 @@ module.exports = {
 				water1: "url('/water1.webp')",
 			},
 			boxShadow: {
-				"3xl": "2px 2px 3px 0px rgba(0, 0, 0, 0.5)",
+				"3xl": "0px 0px 10px 3px rgba(0, 0, 0, 0.2)",
 			},
 		},
 		screens: {

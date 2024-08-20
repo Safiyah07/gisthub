@@ -1,10 +1,13 @@
 import React from "react";
 import { Palanquin_Dark } from "next/font/google";
 import Power1 from "../../../public/power1.webp";
-import Power2 from "../../../public/power4.webp";
-import Power3 from "../../../public/power5.webp";
+import Power4 from "../../../public/power4.webp";
+import Power5 from "../../../public/power5.webp";
+import Power3 from "../../../public/power3.webp";
+import Power7 from "../../../public/power7.webp";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
@@ -17,13 +20,31 @@ export default function Latest() {
 			btn: "Read More",
 		},
 		{
-			img: Power2,
+			img: Power4,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			btn: "Read More",
+		},
+		{
+			img: Power5,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
 			btn: "Read More",
 		},
 		{
 			img: Power3,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			btn: "Read More",
+		},
+		{
+			img: Power7,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			btn: "Read More",
+		},
+		{
+			img: Power5,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
 			btn: "Read More",
@@ -50,7 +71,7 @@ export default function Latest() {
 							/>
 						</div>
 						{/* Change div to link */}
-						<div className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md opacity-0 bg-black/50 hover:opacity-100">
+						<div className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md opacity-0 bg-black/70 hover:opacity-100">
 							<div className="flex flex-col gap-3 p-5">
 								<h1 className="text-xl tracking-wide">{blog.header}</h1>
 								<p className="w-4/5">{blog.text}</p>
@@ -64,8 +85,13 @@ export default function Latest() {
 						</div>
 					</div>
 				))}
-				<Link href="/">Load More</Link>
 			</div>
+			<Link
+				href="/"
+				className="flex justify-end"
+			>
+				<Button>Load More</Button>
+			</Link>
 		</section>
 	);
 }

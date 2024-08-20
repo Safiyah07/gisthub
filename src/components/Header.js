@@ -1,14 +1,18 @@
 "use client";
 import React, { useContext } from "react";
+import { IoIosMoon, IoIosSunny } from "react-icons/io";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "../../public/logo.png";
 import ThemeContext from "@/context/ThemeContext";
-import { IoIosMoon, IoIosSunny } from "react-icons/io";
-// import {}
+import Button from "./shared/Button";
 
 export default function Header() {
 	const { theme, toggleTheme } = useContext(ThemeContext);
+
+	// const router = useRouter();
+	const currentURL = usePathname();
 
 	return (
 		<div
@@ -26,12 +30,30 @@ export default function Header() {
 				/>
 			</Link>
 
-			<button
-				onClick={toggleTheme}
-				className="transition-all duration-300 ease-in-out"
-			>
-				{theme === "light" ? <IoIosMoon size={30} /> : <IoIosSunny size={30} />}
-			</button>
+			<div className="flex items-center gap-4">
+				<button
+					onClick={toggleTheme}
+					className="transition-all duration-300 ease-in-out"
+				>
+					{theme === "light" ? (
+						<IoIosMoon size={30} />
+					) : (
+						<IoIosSunny size={30} />
+					)}
+				</button>
+
+				{currentURL === "/aedc" && (
+					<Link href="/water-board">
+						<Button>Water Board</Button>
+					</Link>
+				)}
+
+				{currentURL === "/water-board" && (
+					<Link href="/aedc">
+						<Button>AEDC</Button>
+					</Link>
+				)}
+			</div>
 		</div>
 	);
 }
