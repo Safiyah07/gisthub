@@ -16,6 +16,9 @@ module.exports = {
 				power1: "url('/power1.webp')",
 				water1: "url('/water1.webp')",
 			},
+			boxShadow: {
+				"3xl": "2px 2px 3px 0px rgba(0, 0, 0, 0.5)",
+			},
 		},
 		screens: {
 			sm: { max: "479px" },

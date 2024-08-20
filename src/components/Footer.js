@@ -11,7 +11,7 @@ const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
 export default function Footer() {
 	return (
-		<footer className="px-10 pt-10 border-t-2 mt-28 sm:text-center border-grey">
+		<footer className="px-10 pt-10 border-t mt-28 sm:text-center border-grey">
 			<div className="flex justify-between w-full gap-20 md:flex-wrap sm:flex-col">
 				{/* logo and text */}
 				<section className="flex flex-col gap-2 pt-3 lg:w-[35%]">
