@@ -1,9 +1,10 @@
 import React from "react";
 import { Palanquin_Dark } from "next/font/google";
 import Power1 from "../../../public/power1.webp";
+import Power2 from "../../../public/power2.webp";
+import Power3 from "../../../public/power3.webp";
 import Power4 from "../../../public/power4.webp";
 import Power5 from "../../../public/power5.webp";
-import Power3 from "../../../public/power3.webp";
 import Power7 from "../../../public/power7.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,37 +18,55 @@ export default function Latest() {
 			img: Power1,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
 		},
 		{
 			img: Power4,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
 		},
 		{
 			img: Power5,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
 		},
 		{
 			img: Power3,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
 		},
 		{
 			img: Power7,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
 		},
 		{
 			img: Power5,
 			header: "Lorem Ipsum Dolor",
 			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			btn: "Read More",
+			date: "20th August 2024",
+		},
+		{
+			img: Power1,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			date: "20th August 2024",
+		},
+		{
+			img: Power4,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			date: "20th August 2024",
+		},
+		{
+			img: Power2,
+			header: "Lorem Ipsum Dolor",
+			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
+			date: "20th August 2024",
 		},
 	];
 
@@ -72,15 +91,18 @@ export default function Latest() {
 						</div>
 						{/* Change div to link */}
 						<div className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md opacity-0 bg-black/70 hover:opacity-100">
-							<div className="flex flex-col gap-3 p-5">
-								<h1 className="text-xl tracking-wide">{blog.header}</h1>
-								<p className="w-4/5">{blog.text}</p>
-								<Link
-									href="/"
-									className="transition-all duration-700 ease-in-out border-b hover:p-1 w-fit border-orange"
-								>
-									{blog.btn}
-								</Link>
+							<div className="flex flex-col justify-between h-full p-5">
+								<div className="flex flex-col gap-3">
+									<h1 className="text-xl tracking-wide">{blog.header}</h1>
+									<p className="w-4/5">{blog.text}</p>
+									<Link
+										href="/"
+										className="transition-all duration-700 ease-in-out border-b hover:p-1 w-fit border-orange"
+									>
+										Read More
+									</Link>
+								</div>
+								<p className="flex justify-end">{blog.date}</p>
 							</div>
 						</div>
 					</div>
