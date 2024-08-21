@@ -18,15 +18,13 @@ export default function Header() {
 	const menuItems = [
 		{
 			id: 1,
-			title: "home",
+			title: "power (aedc)",
+			link: "aedc",
 		},
 		{
 			id: 2,
-			title: "about",
-		},
-		{
-			id: 3,
-			title: "services",
+			title: "water board",
+			link: "water-board",
 		},
 	];
 
@@ -81,18 +79,18 @@ export default function Header() {
 							key={Item.id}
 							className="capitalize"
 						>
-							<a
-								href={`#${Item.title}`}
-								className="flex items-center px-2 pt-4 pb-[10px] hover:text-black/50 transition ease-in-out duration-500 leading-[150%] text-3xl md:text-2xl sm:text-xl"
+							<Link
+								href={`/${Item.link}`}
+								className="flex items-center px-2 pt-4 pb-[10px] hover:text-orange transition ease-in-out duration-500 leading-[150%] text-3xl md:text-2xl sm:text-xl"
 							>
 								{Item.title}
-							</a>
+							</Link>
 						</li>
 					))}
 					<li className="capitalize">
 						<button
 							onClick={toggleTheme}
-							className="flex items-center px-2 pt-4 pb-[10px] hover:text-black/50 transition ease-in-out duration-500 leading-[150%] text-3xl md:text-2xl sm:text-xl"
+							className="flex items-center px-2 pt-4 pb-[10px] hover:text-orange transition ease-in-out duration-500 leading-[150%] text-3xl md:text-2xl sm:text-xl"
 						>
 							{theme === "light" ? <p>Dark Mode</p> : <p>Light Mode</p>}
 						</button>
@@ -120,7 +118,7 @@ export default function Header() {
 
 				{currentURL.startsWith("/water-board") && (
 					<Link href="/aedc">
-						<Button>AEDC</Button>
+						<Button>Power (AEDC)</Button>
 					</Link>
 				)}
 			</div>

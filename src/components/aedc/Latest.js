@@ -1,14 +1,14 @@
-import React from "react";
+// "use client"
 import { createClient } from "contentful";
 import { Palanquin_Dark } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 import Power1 from "../../../public/power1.webp";
 import Power2 from "../../../public/power2.webp";
 import Power3 from "../../../public/power3.webp";
 import Power4 from "../../../public/power4.webp";
 import Power5 from "../../../public/power5.webp";
 import Power7 from "../../../public/power7.webp";
-import Image from "next/image";
-import Link from "next/link";
 import Button from "./../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
@@ -23,7 +23,7 @@ export async function getStaticProps() {
 		content_type: "gist",
 	});
 
-	console.log(response);
+	console.log("ss console:", response);
 
 	return {
 		props: {
@@ -33,7 +33,9 @@ export async function getStaticProps() {
 }
 
 export default function Latest({ gist }) {
-	console.log(gist);
+	console.log(process.env.CONTENTFUL_SPACE_ID);
+	console.log(process.env.CONTENTFUL_ACCESS_KEY);
+	console.log(gist, "hi");
 	const blogs = [
 		{
 			img: Power1,

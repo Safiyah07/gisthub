@@ -69,7 +69,7 @@ export default function Footer() {
 								<Link
 									key={id}
 									href={"/"}
-									className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50 sm:justify-center"
+									className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-orange sm:justify-center"
 								>
 									{social.icon} {social.name}
 								</Link>
@@ -83,13 +83,13 @@ export default function Footer() {
 							<br className="sm:hidden" />
 							<Link
 								href="/aedc"
-								className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50 sm:justify-center"
+								className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-orange sm:justify-center"
 							>
 								Power (AEDC)
 							</Link>
 							<Link
 								href="/water-board"
-								className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-black/50 sm:justify-center"
+								className="flex items-center gap-2 transition-all duration-500 ease-in-out hover:text-orange sm:justify-center"
 							>
 								Water Board
 							</Link>
