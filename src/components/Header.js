@@ -17,7 +17,7 @@ export default function Header() {
 	return (
 		<div
 			id="top"
-			className={`flex justify-between p-10 sm:px-5`}
+			className={`flex justify-between p-4 border-b`}
 		>
 			<Link
 				href="/"
@@ -36,19 +36,22 @@ export default function Header() {
 					className="transition-all duration-300 ease-in-out"
 				>
 					{theme === "light" ? (
-						<IoIosMoon size={30} />
+						<IoIosMoon
+							className="hover:text-grey outline-black outline-8 hover:outline-orange"
+							size={30}
+						/>
 					) : (
 						<IoIosSunny size={30} />
 					)}
 				</button>
 
-				{currentURL === "/aedc" && (
+				{currentURL.startsWith("/aedc") && (
 					<Link href="/water-board">
 						<Button>Water Board</Button>
 					</Link>
 				)}
 
-				{currentURL === "/water-board" && (
+				{currentURL.startsWith("/water-board") && (
 					<Link href="/aedc">
 						<Button>AEDC</Button>
 					</Link>
