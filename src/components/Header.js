@@ -43,7 +43,7 @@ export default function Header() {
 		>
 			<Link
 				href="/"
-				className="w-40 sm:w-32"
+				className="z-20 w-40 sm:w-32"
 			>
 				<Image
 					src={Logo}
@@ -74,7 +74,7 @@ export default function Header() {
 					onClick={menuDisplay}
 					className={`${
 						showMenu ? "-right-full" : " right-0"
-					} py-5 px-16 md:px-10 sm:px-4 bg-white w-full text-xl flex justify-center flex-col transition-all ease-in-out duration-500 absolute z-10 h-svh top-0`}
+					} py-5 px-16 md:px-10 sm:px-4 bg-white dark:bg-black w-full text-xl flex justify-center flex-col transition-all ease-in-out duration-500 absolute z-10 h-svh top-0`}
 				>
 					{menuItems.map((Item) => (
 						<li
@@ -89,6 +89,14 @@ export default function Header() {
 							</a>
 						</li>
 					))}
+					<li className="capitalize">
+						<button
+							onClick={toggleTheme}
+							className="flex items-center px-2 pt-4 pb-[10px] hover:text-black/50 transition ease-in-out duration-500 leading-[150%] text-3xl md:text-2xl sm:text-xl"
+						>
+							{theme === "light" ? <p>Dark Mode</p> : <p>Light Mode</p>}
+						</button>
+					</li>
 				</ul>
 			</div>
 
