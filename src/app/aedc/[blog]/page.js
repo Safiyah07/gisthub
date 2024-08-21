@@ -1,5 +1,6 @@
 import React from "react";
 import Power1 from "../../../../public/power1.webp";
+import Power4 from "../../../../public/power4.webp";
 import Image from "next/image";
 
 export default function page() {
@@ -81,8 +82,8 @@ export default function page() {
 					supply for its citizens and businesses.
 				</p>
 				<Image
-					src={Power1}
-					alt="image1"
+					src={Power4}
+					alt="image4"
 					className="object-cover h-[350px]"
 					priority
 				/>
