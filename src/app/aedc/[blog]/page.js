@@ -1,6 +1,7 @@
 import React from "react";
 import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
+import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
 
 export default function page() {
@@ -26,7 +27,7 @@ export default function page() {
 				<Image
 					src={Power1}
 					alt="image1"
-					className="object-cover h-[350px]"
+					className="object-cover h-[350px] rounded-md"
 					priority
 				/>
 				<p>
@@ -71,6 +72,12 @@ export default function page() {
 					infrastructure. Without adequate investment, it is difficult to meet
 					the growing demand for electricity and reduce costs.
 				</p>
+				<Image
+					src={Power5}
+					alt="image6"
+					className="object-cover h-[350px] rounded-md"
+					priority
+				/>
 				<p>
 					{" "}
 					Conclusion: The high cost of electricity in Nigeria is a complex issue
@@ -84,7 +91,7 @@ export default function page() {
 				<Image
 					src={Power4}
 					alt="image4"
-					className="object-cover h-[350px]"
+					className="object-cover h-[350px] rounded-md"
 					priority
 				/>
 			</div>

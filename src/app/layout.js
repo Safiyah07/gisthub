@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={palanquin.className}>
 				<ThemeProvider>
-					<main className="dark:bg-black/95 dark:text-white">
+					<main className="relative overflow-x-hidden dark:bg-black/95 dark:text-white">
 						<Header />
 						{children}
 						<Footer />

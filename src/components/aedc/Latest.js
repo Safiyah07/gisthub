@@ -1,4 +1,5 @@
 import React from "react";
+import { createClient } from "contentful";
 import { Palanquin_Dark } from "next/font/google";
 import Power1 from "../../../public/power1.webp";
 import Power2 from "../../../public/power2.webp";
@@ -12,7 +13,27 @@ import Button from "./../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export default function Latest() {
+export async function getStaticProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE_ID,
+		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+	});
+
+	const response = await client.getEntries({
+		content_type: "gist",
+	});
+
+	console.log(response);
+
+	return {
+		props: {
+			gist: response.items,
+		},
+	};
+}
+
+export default function Latest({ gist }) {
+	console.log(gist);
 	const blogs = [
 		{
 			img: Power1,
@@ -95,11 +116,8 @@ export default function Latest() {
 								<div className="flex flex-col w-4/5 gap-3">
 									<h1 className="text-xl tracking-wide">{blog.header}</h1>
 									<p>{blog.text}</p>
-									<Link
-										href={`/aedc/${blog.header}`}
-										className="transition-all duration-300 ease-in-out border-b hover:text-orange w-fit border-orange"
-									>
-										Read More
+									<Link href={`/aedc/${blog.header}`}>
+										<Button>Read More</Button>
 									</Link>
 								</div>
 								<p className="flex justify-end">{blog.date}</p>

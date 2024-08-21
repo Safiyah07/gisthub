@@ -53,8 +53,8 @@ export default function Header() {
 			</Link>
 
 			{/* Hamburger for mobile */}
-			<div>
-				<div className="relative z-20 hidden cursor-pointer sm:block">
+			<div className="hidden sm:block">
+				<div className="relative z-20 cursor-pointer">
 					{showMenu ? (
 						<Hamburger
 							toggled={!showMenu}
@@ -106,12 +106,9 @@ export default function Header() {
 					className="transition-all duration-300 ease-in-out"
 				>
 					{theme === "light" ? (
-						<IoIosMoon
-							className="hover:text-grey outline-black outline-8 hover:outline-orange"
-							size={30}
-						/>
+						<Button>Dark Mode</Button>
 					) : (
-						<IoIosSunny size={30} />
+						<Button>Light Mode</Button>
 					)}
 				</button>
 
