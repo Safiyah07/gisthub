@@ -1,4 +1,4 @@
-// "use client"
+// "use client";
 import { createClient } from "contentful";
 import { Palanquin_Dark } from "next/font/google";
 import Image from "next/image";
@@ -19,22 +19,29 @@ export async function getStaticProps() {
 		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 	});
 
-	const response = await client.getEntries({
-		content_type: "gist",
-	});
+	try {
+		const response = await client.getEntries({
+			content_type: "gist",
+		});
 
-	console.log("ss console:", response);
+		console.log("Fetched Entries:", response);
 
-	return {
-		props: {
-			gist: response.items,
-		},
-	};
+		return {
+			props: {
+				gist: response.items || [],
+			},
+		};
+	} catch (error) {
+		console.error("Error fetching data from Contentful:", error);
+		return {
+			props: {
+				gist: [],
+			},
+		};
+	}
 }
 
 export default function Latest({ gist }) {
-	console.log(process.env.CONTENTFUL_SPACE_ID);
-	console.log(process.env.CONTENTFUL_ACCESS_KEY);
 	console.log(gist, "hi");
 	const blogs = [
 		{
