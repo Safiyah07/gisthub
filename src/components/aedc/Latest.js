@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { createClient } from "contentful";
 import { Palanquin_Dark } from "next/font/google";
 import Image from "next/image";
@@ -13,7 +13,7 @@ import Button from "./../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export async function getStaticProps() {
+async function getProject() {
 	const client = createClient({
 		space: process.env.CONTENTFUL_SPACE_ID,
 		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -25,12 +25,10 @@ export async function getStaticProps() {
 		});
 
 		console.log("Fetched Entries:", response);
+		console.log("Fetched Entries:", response.items);
+		console.log("Fetched Entries:", response.limit);
 
-		return {
-			props: {
-				gist: response.items || [],
-			},
-		};
+		return response.items;
 	} catch (error) {
 		console.error("Error fetching data from Contentful:", error);
 		return {
@@ -41,8 +39,7 @@ export async function getStaticProps() {
 	}
 }
 
-export default function Latest({ gist }) {
-	console.log(gist, "hi");
+export default async function Latest() {
 	const blogs = [
 		{
 			img: Power1,
@@ -99,6 +96,8 @@ export default function Latest({ gist }) {
 			date: "20th August 2024",
 		},
 	];
+	const gist = await getProject();
+	console.log(gist);
 
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">
@@ -124,25 +123,25 @@ export default function Latest({ gist }) {
 			</div>
 
 			<div className="grid grid-cols-3 gap-10 sm:gap-5 md:grid-cols-2 sm:grid-cols-1">
-				{blogs.map((blog, id) => (
+				{/* {gist.map((blog, id) => (
 					<div
-						key={id}
+						key={blog.sys.id}
 						className="relative"
 					>
 						<div className={`rounded-md h-[300px]`}>
 							<Image
-								src={blog.img}
+								src={blog.fields.thumbnail.url}
 								className="object-cover h-[300px] rounded-md shadow-3xl"
 								alt="image"
 							/>
 						</div>
-						{/* Change div to link */}
+						
 						<div className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md lg:opacity-0 bg-black/70 lg:hover:opacity-100">
 							<div className="flex flex-col justify-between h-full p-5">
 								<div className="flex flex-col w-4/5 gap-3">
 									<h1 className="text-xl tracking-wide">{blog.header}</h1>
 									<p>{blog.text}</p>
-									<Link href={`/aedc/${blog.header}`}>
+									<Link href={`/aedc/${blog.fields.slug}`}>
 										<Button>Read More</Button>
 									</Link>
 								</div>
@@ -150,6 +149,9 @@ export default function Latest({ gist }) {
 							</div>
 						</div>
 					</div>
+				))} */}
+				{gist.map((blog) => (
+					<p key={blog.sys.id}>{blog.fields.title}</p>
 				))}
 			</div>
 			<Link
