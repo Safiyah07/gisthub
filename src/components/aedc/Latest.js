@@ -1,5 +1,5 @@
 "use client";
-import { createClient } from "contentful";
+
 import { Palanquin_Dark } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,33 +13,7 @@ import Button from "./../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-async function getProject() {
-	const client = createClient({
-		space: process.env.CONTENTFUL_SPACE_ID,
-		accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-	});
-
-	try {
-		const response = await client.getEntries({
-			content_type: "gist",
-		});
-
-		console.log("Fetched Entries:", response);
-		console.log("Fetched Entries:", response.items);
-		console.log("Fetched Entries:", response.limit);
-
-		return response.items;
-	} catch (error) {
-		console.error("Error fetching data from Contentful:", error);
-		return {
-			props: {
-				gist: [],
-			},
-		};
-	}
-}
-
-export default async function Latest() {
+export default function Latest({ gists }) {
 	const blogs = [
 		{
 			img: Power1,
@@ -96,8 +70,9 @@ export default async function Latest() {
 			date: "20th August 2024",
 		},
 	];
-	const gist = await getProject();
-	console.log(gist);
+
+	console.log(gists);
+	// console.log(blogs);
 
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">
@@ -150,9 +125,9 @@ export default async function Latest() {
 						</div>
 					</div>
 				))} */}
-				{gist.map((blog) => (
-					<p key={blog.sys.id}>{blog.fields.title}</p>
-				))}
+				{/* {gists.map((gist) => (
+					<p key={gist.sys.id}>{gist.fields.title}</p>
+				))} */}
 			</div>
 			<Link
 				href="/"
