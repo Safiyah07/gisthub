@@ -20,11 +20,14 @@ async function getGist() {
 		return response.items;
 	} catch (error) {
 		console.error("Error fetching data from Contentful:", error);
+		return [];
 	}
 }
 
 export default async function Contentful() {
 	const gists = await getGist();
+	console.log(gists);
+	console.debug(gists);
 
 	return (
 		<div>

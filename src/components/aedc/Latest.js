@@ -14,6 +14,7 @@ import Button from "./../shared/Button";
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
 export default function Latest({ gists }) {
+	console.log("gists are:", gists);
 	const blogs = [
 		{
 			img: Power1,
@@ -70,8 +71,6 @@ export default function Latest({ gists }) {
 			date: "20th August 2024",
 		},
 	];
-
-	console.log(gists);
 	// console.log(blogs);
 
 	return (
