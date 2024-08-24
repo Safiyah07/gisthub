@@ -10,10 +10,13 @@ import Power4 from "../../../public/power4.webp";
 import Power5 from "../../../public/power5.webp";
 import Power7 from "../../../public/power7.webp";
 import Button from "./../shared/Button";
+// import { useEffect } from "react";
+import { getGist } from "../../lib/contentful";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export default function Latest({ gists }) {
+export default async function Latest({ gists }) {
+	// const gists = await getGist;
 	console.log("gists are:", gists);
 	const blogs = [
 		{
@@ -71,10 +74,10 @@ export default function Latest({ gists }) {
 			date: "20th August 2024",
 		},
 	];
-	// console.log(blogs);
 
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">
+			{/* <Contentful /> */}
 			<div>
 				<h1
 					className={`${palanquin.className} text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl mt-5`}
