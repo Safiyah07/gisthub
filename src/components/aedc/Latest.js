@@ -10,7 +10,6 @@ import Power4 from "../../../public/power4.webp";
 import Power5 from "../../../public/power5.webp";
 import Power7 from "../../../public/power7.webp";
 import Button from "./../shared/Button";
-import Contentful from "@/lib/Contentful";
 // import { useEffect } from "react";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
@@ -109,36 +108,36 @@ export default function Latest({ gists }) {
 			</div>
 
 			<div className="grid grid-cols-3 gap-10 sm:gap-5 md:grid-cols-2 sm:grid-cols-1">
-				{/* {gist.map((blog, id) => (
+				{gists.map((gist, id) => (
 					<div
-						key={blog.sys.id}
+						key={gist.sys.id}
 						className="relative"
 					>
-						<div className={`rounded-md h-[300px]`}>
-							<Image
-								src={blog.fields.thumbnail.url}
+						<div className={`rounded-md bg-green-300 h-[300px]`}>
+							{/* <Image
+								src={gist.fields.thumbnail.url}
 								className="object-cover h-[300px] rounded-md shadow-3xl"
 								alt="image"
-							/>
+							/> */}
 						</div>
-						
+
 						<div className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md lg:opacity-0 bg-black/70 lg:hover:opacity-100">
 							<div className="flex flex-col justify-between h-full p-5">
 								<div className="flex flex-col w-4/5 gap-3">
-									<h1 className="text-xl tracking-wide">{blog.header}</h1>
-									<p>{blog.text}</p>
-									<Link href={`/aedc/${blog.fields.slug}`}>
+									<h1 className="text-xl tracking-wide">{gist.fields.title}</h1>
+									{/* <p>{gist.text}</p> */}
+									<Link href={`/aedc/${gist.fields.slug}`}>
 										<Button>Read More</Button>
 									</Link>
 								</div>
-								<p className="flex justify-end">{blog.date}</p>
+								<p className="flex justify-end">{gist.fields.time}</p>
 							</div>
 						</div>
 					</div>
-				))} */}
-				{gists.map((gist) => (
-					<p key={gist.sys.id}>{gist.fields.title}</p>
 				))}
+				{/* {gists.map((gist) => (
+					<p key={gist.sys.id}>{gist.fields.title}</p>
+				))} */}
 			</div>
 			<Link
 				href="/"
