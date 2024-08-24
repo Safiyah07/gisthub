@@ -10,14 +10,23 @@ import Power4 from "../../../public/power4.webp";
 import Power5 from "../../../public/power5.webp";
 import Power7 from "../../../public/power7.webp";
 import Button from "./../shared/Button";
+import Contentful from "@/lib/Contentful";
 // import { useEffect } from "react";
-import { getGist } from "../../lib/contentful";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export default async function Latest({ gists }) {
+const func = () => {
+	return true;
+};
+
+export default function Latest({ gists }) {
 	// const gists = await getGist;
-	console.log("gists are:", gists);
+
+	// console.log("Gists are", func());
+	// if (!gists) {
+	// 	return console.log(321);
+	// }
+	console.log("From latest page", [gists]);
 	const blogs = [
 		{
 			img: Power1,
@@ -127,9 +136,9 @@ export default async function Latest({ gists }) {
 						</div>
 					</div>
 				))} */}
-				{/* {gists.map((gist) => (
+				{gists.map((gist) => (
 					<p key={gist.sys.id}>{gist.fields.title}</p>
-				))} */}
+				))}
 			</div>
 			<Link
 				href="/"
