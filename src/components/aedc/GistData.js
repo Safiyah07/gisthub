@@ -11,7 +11,7 @@ export default function GistData({ gist }) {
 		time,
 		slug,
 		thumbnail,
-		conclusionImage,
+		// conclusionImage,
 		featuredImage,
 	} = gist.fields;
 
