@@ -18,8 +18,6 @@ export async function gisthub() {
 		} else {
 			return response.items;
 		}
-		// return response.items;
-		// return console.log("Fetched Entries:", response), response.items;
 	} catch (error) {
 		console.error("Error fetching data from Contentful:", error);
 		return error;
@@ -28,7 +26,6 @@ export async function gisthub() {
 
 export default async function Gist() {
 	const gistt = await gisthub();
-	// console.log("Todays gist is here and ready for you", gistt);
 	return (
 		<div>
 			<Latest gists={gistt} />
