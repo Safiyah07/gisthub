@@ -3,8 +3,48 @@ import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
+import { createClient } from "contentful";
 
-export default function page() {
+const client = createClient({
+	space: process.env.CONTENTFUL_SPACE_ID,
+	accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+});
+
+export async function generateStaticParams() {
+	const response = await client.getEntries({
+		content_type: "gist",
+	});
+	const paths = response.items.map((post) => ({
+		params: { slug: post.fields.slug },
+	}));
+
+	return { paths, fallback: false };
+}
+
+export async function getBlog({ params }) {
+	try {
+		const { slug } = params;
+		const response = await client.getEntries({
+			content_type: "gist",
+			"fields.slug": slug,
+		});
+
+		if (!response.items) {
+			return "no gists";
+		} else {
+			return response.items;
+		}
+	} catch (error) {
+		console.log(error);
+		return error;
+	}
+}
+
+export default async function page({ params }) {
+	const post = await getBlog(params);
+
+	console.log(post);
+
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
 			<div className="flex flex-col w-4/5 gap-5 sm:w-full">

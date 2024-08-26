@@ -24,7 +24,7 @@ export async function gisthub() {
 	}
 }
 
-export default async function Gist() {
+export default async function Posts() {
 	const gistt = await gisthub();
 	return (
 		<div>
