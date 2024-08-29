@@ -40,10 +40,10 @@ export async function getBlog({ params }) {
 export default async function Post({ params }) {
 	const post = await getBlog(params);
 
-	console.log(post);
+	console.log("unique post is", post);
 	return (
 		<div>
-			<Slug />
+			<Slug post={post} />
 		</div>
 	);
 }

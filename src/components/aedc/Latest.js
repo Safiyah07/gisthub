@@ -96,7 +96,7 @@ export default function Latest({ gists }) {
 				</p>
 			</div>
 
-			<div className="grid grid-cols-3 gap-10 sm:gap-5 md:grid-cols-2 sm:grid-cols-1">
+			<div className="grid grid-cols-3 gap-5 md:grid-cols-2 sm:grid-cols-1">
 				{gists.map((gist) => (
 					<GistData
 						key={gist.sys.id}

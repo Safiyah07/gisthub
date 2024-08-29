@@ -6,8 +6,8 @@ import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
 
-export default async function page({ params }) {
-	console.log("from slug page", params);
+export default async function page({ post }) {
+	console.log("from slug page", post);
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
