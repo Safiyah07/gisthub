@@ -1,6 +1,6 @@
 import React from "react";
-import Slug from "../aedc/[slug]/page";
 import { createClient } from "contentful";
+import Slug from "../aedc/[slug]/page";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,

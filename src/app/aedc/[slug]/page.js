@@ -5,7 +5,7 @@ import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
-import Post from "@/app/utils/Post";
+// import Post from "@/app/utils/Post";
 
 export default async function page({ post }) {
 	console.log("from slug page", post);
