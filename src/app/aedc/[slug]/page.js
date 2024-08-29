@@ -5,6 +5,7 @@ import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
+import Post from "@/app/utils/Post";
 
 export default async function page({ post }) {
 	console.log("from slug page", post);
@@ -15,6 +16,7 @@ export default async function page({ post }) {
 				<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
 					Understanding your electricity bill
 				</h1>
+				{/* <Post /> */}
 				<div className="flex gap-3 text-sm">
 					<p>From AEDC</p>
 					<p>-</p>
