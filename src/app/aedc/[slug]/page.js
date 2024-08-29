@@ -11,7 +11,7 @@ export default async function page({ params }) {
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
-			<div className="flex flex-col w-4/5 gap-5 sm:w-full">
+			<div className="flex flex-col w-full gap-5 lg:w-4/5">
 				<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
 					Understanding your electricity bill
 				</h1>
