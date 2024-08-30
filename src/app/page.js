@@ -19,13 +19,14 @@ export default function Home() {
 		// });
 		gsap.fromTo(
 			".fade",
-			{ y: 40, opacity: 0 },
+			{ y: 100, opacity: 0, delay: 0.5 },
 			{
 				y: 0,
 				opacity: 1,
-				duration: 1,
-				stagger: 1.5,
-				ease: "back.out",
+				duration: 0.7,
+				stagger: 0.5,
+				delay: 0.5,
+				// ease: "back.out",
 				// repeat: -1,
 				// yoyo: true,
 			}
@@ -33,7 +34,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<section className="flex flex-col gap-10 p-10 text-center translate-y-10 sm:px-5">
+		<section className="flex flex-col gap-10 p-10 pb-32 text-center translate-y-10 sm:px-5">
 			{/* text */}
 			<div className="m-auto text-xl text-center lg:w-3/5">
 				<h1 className={`${palanquin.className} fade lg:text-[2rem] mb-5`}>
@@ -46,8 +47,8 @@ export default function Home() {
 			</div>
 
 			{/* images */}
-			<div className="flex flex-col justify-between gap-10 fade lg:flex-row">
-				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700">
+			<div className="flex flex-col justify-between gap-10 lg:flex-row">
+				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700 fade">
 					<div className="rounded-md h-[300px] bg-power1 bg-cover"></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
@@ -58,7 +59,7 @@ export default function Home() {
 						Power (AEDC)
 					</Link>
 				</div>
-				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700">
+				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700 fade">
 					<div className="rounded-md h-[300px] bg-water1 bg-cover "></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
