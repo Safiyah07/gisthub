@@ -103,8 +103,8 @@ export default function Footer() {
 					</section>
 				</div>
 				<p className="mt-10 mb-5">
-					copyright &copy; {new Date().getFullYear()}. All Rights Reserved Gist
-					Hub
+					copyright &copy; {new Date().getFullYear()}. All Rights Reserved
+					Gisthub
 				</p>
 			</section>
 		</footer>
