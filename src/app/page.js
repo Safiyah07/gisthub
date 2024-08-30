@@ -19,11 +19,11 @@ export default function Home() {
 		// });
 		gsap.fromTo(
 			".fade",
-			{ y: 200, opacity: 0 },
+			{ y: 40, opacity: 0 },
 			{
-				y: -100,
+				y: 0,
 				opacity: 1,
-				duration: 2,
+				duration: 1,
 				stagger: 1.5,
 				ease: "back.out",
 				// repeat: -1,
