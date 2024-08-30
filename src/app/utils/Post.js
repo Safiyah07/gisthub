@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 		params: { slug: post.fields.slug },
 	}));
 
-	return { paths, fallback: false };
+	// return { paths, fallback: false };
 }
 
 export async function getBlog({ params }) {
