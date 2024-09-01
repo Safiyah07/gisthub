@@ -19,7 +19,7 @@ export default function Home() {
 		// });
 		gsap.fromTo(
 			".fade",
-			{ y: 100, opacity: 0, delay: 0.5 },
+			{ opacity: 0, duration: 0, y: 40 },
 			{
 				y: 0,
 				opacity: 1,
@@ -34,9 +34,9 @@ export default function Home() {
 	}, []);
 
 	return (
-		<section className="flex flex-col gap-10 p-10 pb-32 text-center translate-y-10 sm:px-5">
+		<section className="flex flex-col gap-10 px-10 pt-16 pb-32 text-center sm:px-5">
 			{/* text */}
-			<div className="m-auto text-xl text-center lg:w-3/5">
+			<div className="m-auto overflow-hidden text-xl text-center lg:w-3/5">
 				<h1 className={`${palanquin.className} fade lg:text-[2rem] mb-5`}>
 					What&apos;s the scoop you&apos;re after today?
 				</h1>
@@ -47,7 +47,7 @@ export default function Home() {
 			</div>
 
 			{/* images */}
-			<div className="flex flex-col justify-between gap-10 lg:flex-row">
+			<div className="flex flex-col justify-between gap-10 overflow-hidden lg:flex-row">
 				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700 fade">
 					<div className="rounded-md h-[300px] bg-power1 bg-cover"></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
