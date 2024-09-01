@@ -1,8 +1,8 @@
 "use client";
-import { Palanquin_Dark } from "next/font/google";
-import Link from "next/link";
-import { gsap } from "gsap";
 import { useEffect } from "react";
+import Link from "next/link";
+import { Palanquin_Dark } from "next/font/google";
+import { gsap } from "gsap";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
@@ -25,16 +25,25 @@ export default function Home() {
 				opacity: 1,
 				duration: 0.7,
 				stagger: 0.5,
-				delay: 0.5,
+				// delay: 0.5,
 				// ease: "back.out",
 				// repeat: -1,
 				// yoyo: true,
 			}
 		);
+		gsap.fromTo(
+			".image",
+			{ opacity: 0, duration: 0 },
+			{
+				y: 10,
+				opacity: 1,
+				duration: 0.7,
+			}
+		);
 	}, []);
 
 	return (
-		<section className="flex flex-col gap-10 px-10 pt-16 pb-32 text-center sm:px-5">
+		<section className="flex flex-col gap-10 px-10 py-16 text-center sm:px-5">
 			{/* text */}
 			<div className="m-auto overflow-hidden text-xl text-center lg:w-3/5">
 				<h1 className={`${palanquin.className} fade lg:text-[2rem] mb-5`}>
@@ -47,8 +56,8 @@ export default function Home() {
 			</div>
 
 			{/* images */}
-			<div className="flex flex-col justify-between gap-10 overflow-hidden lg:flex-row">
-				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700 fade">
+			<div className="flex flex-col justify-between gap-10 lg:flex-row">
+				<div className="relative w-full lg:w-[49%] border-2  shadow-3xl hover:border-orange rounded-lg transition-all ease-in-out duration-700 image">
 					<div className="rounded-md h-[300px] bg-power1 bg-cover"></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
@@ -59,7 +68,7 @@ export default function Home() {
 						Power (AEDC)
 					</Link>
 				</div>
-				<div className="relative w-full lg:w-[49%] border-2 border-transparent hover:border-orange rounded-lg transition-all ease-in-out duration-700 fade">
+				<div className="relative w-full lg:w-[49%] border-2  shadow-3xl hover:border-orange rounded-lg transition-all ease-in-out duration-700 image">
 					<div className="rounded-md h-[300px] bg-water1 bg-cover "></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
