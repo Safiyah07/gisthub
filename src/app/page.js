@@ -57,7 +57,7 @@ export default function Home() {
 
 			{/* images */}
 			<div className="flex flex-col justify-between gap-10 lg:flex-row">
-				<div className="relative w-full lg:w-[49%] border-2  shadow-3xl hover:border-orange rounded-lg transition-all ease-in-out duration-700 image">
+				<div className="relative w-full lg:w-[49%] shadow-3xl rounded-lg transition-all ease-in-out duration-700 image">
 					<div className="rounded-md h-[300px] bg-power1 bg-cover"></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
@@ -68,7 +68,7 @@ export default function Home() {
 						Power (AEDC)
 					</Link>
 				</div>
-				<div className="relative w-full lg:w-[49%] border-2  shadow-3xl hover:border-orange rounded-lg transition-all ease-in-out duration-700 image">
+				<div className="relative w-full lg:w-[49%] shadow-3xl rounded-lg transition-all ease-in-out duration-700 image">
 					<div className="rounded-md h-[300px] bg-water1 bg-cover "></div>
 					<div className="absolute inset-0 bg-black rounded-md opacity-40"></div>
 					<Link
