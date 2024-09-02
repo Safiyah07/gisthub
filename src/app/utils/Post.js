@@ -44,8 +44,8 @@ export default async function Post({ params }) {
 	console.log("unique post is", post);
 	return (
 		<div>
-			{/* <Slug post={post} /> */}
-			<Latest post={post} />
+			<Slug post={post} />
+			{/* <Latest post={post} /> */}
 		</div>
 	);
 }
