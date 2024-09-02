@@ -33,11 +33,11 @@ export default function Home() {
 		);
 		gsap.fromTo(
 			".image",
-			{ opacity: 0, duration: 0 },
+			{ opacity: 0 },
 			{
-				y: 10,
 				opacity: 1,
 				duration: 0.7,
+				delay: 0.4,
 			}
 		);
 	}, []);
