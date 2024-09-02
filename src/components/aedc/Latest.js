@@ -13,7 +13,7 @@ import GistData from "./GistData";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export default function Latest({ gists }) {
+export default function Latest({ gists, post }) {
 	const blogs = [
 		{
 			img: Power1,
@@ -70,6 +70,8 @@ export default function Latest({ gists }) {
 			date: "20th August 2024",
 		},
 	];
+
+	console.log("from latest page", post);
 
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">

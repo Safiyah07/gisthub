@@ -1,6 +1,7 @@
 import React from "react";
 import { createClient } from "contentful";
 import Slug from "../aedc/[slug]/page";
+import Latest from "@/components/aedc/Latest";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -43,7 +44,8 @@ export default async function Post({ params }) {
 	console.log("unique post is", post);
 	return (
 		<div>
-			<Slug post={post} />
+			{/* <Slug post={post} /> */}
+			<Latest post={post} />
 		</div>
 	);
 }
