@@ -13,7 +13,8 @@ import GistData from "./GistData";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
-export default function Latest({ gists }) {
+export default function Latest({ gists, post }) {
+	console.log("latest slug", post);
 	const blogs = [
 		{
 			img: Power1,

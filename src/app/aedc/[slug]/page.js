@@ -1,13 +1,73 @@
 "use client";
 
+// import { createClient } from "contentful";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { generateStaticParams, getBlog } from "../../utils/Post";
 import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 import Image from "next/image";
 // import Post from "@/app/utils/Post";
 
-export default function page({ post }) {
-	console.log("from slug page", post);
+// const client = createClient({
+// 	space: process.env.CONTENTFUL_SPACE_ID,
+// 	accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+// });
+
+// export async function generateStaticParams() {
+// 	try {
+// 		const response = await client.getEntries({
+// 			content_type: "gist",
+// 		});
+
+// 		const uniqueSlug = response.items;
+
+// 		const paths = uniqueSlug.map((post) => ({
+// 			slug: post.fields.slug,
+// 		}));
+// 		console.log(paths);
+// 		return paths;
+// 	} catch (error) {
+// 		console.log(error);
+// 		return error;
+// 	}
+// }
+
+// export async function getBlog({ params }) {
+// 	try {
+// 		const { slug } = params;
+// 		const response = await client.getEntries({
+// 			content_type: "gist",
+// 			"fields.slug": slug,
+// 		});
+
+// 		const gist = response.items;
+
+// 		if (!gist || gist.length === 0) {
+// 			return "no gist";
+// 		} else {
+// 			console.log("Gist is", gist);
+// 			return gist;
+// 		}
+// 	} catch (error) {
+// 		console.log(error);
+// 		return error;
+// 	}
+// }
+
+export default function Page() {
+	const params = useRouter();
+
+	useEffect(() => {
+		const demo = async () => {
+			const post = await getBlog(params);
+			console.log("unique post is", post);
+		};
+		demo();
+	}, [params]);
+
+	console.log("from slug page", params);
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
