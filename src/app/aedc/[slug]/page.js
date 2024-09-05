@@ -1,19 +1,15 @@
-"use client";
+// "use client";
 
-// import { createClient } from "contentful";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { generateStaticParams, getBlog } from "../../utils/Post";
+import { createClient } from "contentful";
+import Image from "next/image";
 import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
-import Image from "next/image";
-// import Post from "@/app/utils/Post";
 
-// const client = createClient({
-// 	space: process.env.CONTENTFUL_SPACE_ID,
-// 	accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-// });
+const client = createClient({
+	space: process.env.CONTENTFUL_SPACE_ID,
+	accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+});
 
 // export async function generateStaticParams() {
 // 	try {
@@ -26,7 +22,7 @@ import Image from "next/image";
 // 		const paths = uniqueSlug.map((post) => ({
 // 			slug: post.fields.slug,
 // 		}));
-// 		console.log(paths);
+// 		console.log("the paths:", paths);
 // 		return paths;
 // 	} catch (error) {
 // 		console.log(error);
@@ -34,40 +30,33 @@ import Image from "next/image";
 // 	}
 // }
 
-// export async function getBlog({ params }) {
-// 	try {
-// 		const { slug } = params;
-// 		const response = await client.getEntries({
-// 			content_type: "gist",
-// 			"fields.slug": slug,
-// 		});
+export async function getBlog({ params }) {
+	try {
+		// const { slug } = params;
+		console.log(params);
+		const response = await client.getEntries({
+			content_type: "gist",
+			"fields.slug": params.slug,
+		});
 
-// 		const gist = response.items;
+		const gist = response.items;
 
-// 		if (!gist || gist.length === 0) {
-// 			return "no gist";
-// 		} else {
-// 			console.log("Gist is", gist);
-// 			return gist;
-// 		}
-// 	} catch (error) {
-// 		console.log(error);
-// 		return error;
-// 	}
-// }
+		if (!gist || gist.length === 0) {
+			return "no gist";
+		} else {
+			console.log("Gist is", gist);
+			return gist;
+		}
+	} catch (error) {
+		console.log(error);
+		return error;
+	}
+}
 
-export default function Page() {
-	const params = useRouter();
-
-	useEffect(() => {
-		const demo = async () => {
-			const post = await getBlog(params);
-			console.log("unique post is", post);
-		};
-		demo();
-	}, [params]);
-
+export default async function Page({ params }) {
+	const me = await getBlog(params);
 	console.log("from slug page", params);
+	console.log("returning gist", me);
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
