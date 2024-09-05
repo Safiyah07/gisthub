@@ -50,7 +50,7 @@ export async function getBlog({ params }) {
 }
 
 export default async function Post({ params }) {
-	const post = await getBlog(params);
+	const post = await getBlog({ params });
 
 	console.log(params);
 
