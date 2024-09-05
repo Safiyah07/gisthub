@@ -8,7 +8,7 @@ import Power5 from "../../../../public/power5.webp";
 
 export default function Post({ post }) {
 	const {
-		title,
+		// title,
 		intro,
 		info,
 		time,
@@ -18,6 +18,7 @@ export default function Post({ post }) {
 		featuredImage,
 	} = post;
 	console.log(post);
+
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
 			<div className="flex flex-col w-full gap-5 lg:w-4/5">
@@ -37,14 +38,15 @@ export default function Post({ post }) {
 					explore some of the key factors contributing to the high electricity
 					bills in Nigeria.
 				</p>
-				<Image
+				{/* <Image
 					src={`https:${thumbnail.fields.file.url}`}
 					width={thumbnail.fields.file.details.image.width}
 					height={thumbnail.fields.file.details.image.height}
 					alt="thumbnail"
 					className="object-cover h-[350px] rounded-md"
 					priority
-				/>
+				/> */}
+				<p>{info}</p>
 				<p>
 					1. Aging Infrastructure: One of the primary reasons for high
 					electricity bills is the aging and dilapidated state of Nigeria&apos;s
@@ -87,14 +89,14 @@ export default function Post({ post }) {
 					infrastructure. Without adequate investment, it is difficult to meet
 					the growing demand for electricity and reduce costs.
 				</p>
-				<Image
+				{/* <Image
 					src={`https:${featuredImage.fields.file.url}`}
 					width={featuredImage.fields.file.details.image.width}
 					height={featuredImage.fields.file.details.image.height}
 					alt="featured image"
 					className="object-cover h-[350px] rounded-md"
 					priority
-				/>
+				/> */}
 				<p>
 					{" "}
 					Conclusion: The high cost of electricity in Nigeria is a complex issue
@@ -105,14 +107,14 @@ export default function Post({ post }) {
 					Nigeria can work towards a more affordable and reliable electricity
 					supply for its citizens and businesses.
 				</p>
-				<Image
+				{/* <Image
 					src={`https:${conclusionImage.fields.file.url}`}
 					width={conclusionImage.fields.file.details.image.width}
 					height={conclusionImage.fields.file.details.image.height}
 					alt="image4"
 					className="object-cover h-[350px] rounded-md"
 					priority
-				/>
+				/> */}
 			</div>
 		</section>
 	);

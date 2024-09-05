@@ -51,5 +51,5 @@ export default async function Page({ params }) {
 	const post = await getBlog({ URL });
 	console.log("returning gist", post);
 
-	return <Post post={post} />;
+	return <Post post={post.fields} />;
 }
