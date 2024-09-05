@@ -11,32 +11,30 @@ const client = createClient({
 	accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 });
 
-// export async function generateStaticParams() {
-// 	try {
-// 		const response = await client.getEntries({
-// 			content_type: "gist",
-// 		});
-
-// 		const uniqueSlug = response.items;
-
-// 		const paths = uniqueSlug.map((post) => ({
-// 			slug: post.fields.slug,
-// 		}));
-// 		console.log("the paths:", paths);
-// 		return paths;
-// 	} catch (error) {
-// 		console.log(error);
-// 		return error;
-// 	}
-// }
-
-export async function getBlog({ params }) {
+export async function generateStaticParams() {
 	try {
-		// const { slug } = params;
-		console.log(params);
 		const response = await client.getEntries({
 			content_type: "gist",
-			"fields.slug": params.slug,
+		});
+
+		const uniqueSlug = response.items;
+
+		const paths = uniqueSlug.map((post) => ({
+			slug: post.fields.slug,
+		}));
+		return paths;
+	} catch (error) {
+		console.log(error);
+		return error;
+	}
+}
+
+export async function getBlog({ URL }) {
+	try {
+		const { slug } = URL;
+		const response = await client.getEntries({
+			content_type: "gist",
+			"fields.slug": slug,
 		});
 
 		const gist = response.items;
@@ -54,8 +52,9 @@ export async function getBlog({ params }) {
 }
 
 export default async function Page({ params }) {
-	const me = await getBlog(params);
-	console.log("from slug page", params);
+	const URL = params;
+	const me = await getBlog({ URL });
+	console.log("from slug page", URL);
 	console.log("returning gist", me);
 
 	return (
