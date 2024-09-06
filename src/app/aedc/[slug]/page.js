@@ -48,8 +48,8 @@ export async function getBlog({ URL }) {
 
 export default async function Page({ params }) {
 	const URL = params;
-	const post = await getBlog({ URL });
-	console.log("returning gist", post);
+	const gist = await getBlog({ URL });
+	console.log("returning gist", gist);
 
-	return <Post post={post.fields} />;
+	return <Post gist={gist} />;
 }

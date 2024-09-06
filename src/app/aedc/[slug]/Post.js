@@ -6,9 +6,9 @@ import Power1 from "../../../../public/power1.webp";
 import Power4 from "../../../../public/power4.webp";
 import Power5 from "../../../../public/power5.webp";
 
-export default function Post({ post }) {
+export default function Post({ gist }) {
 	const {
-		// title,
+		title,
 		intro,
 		info,
 		time,
@@ -16,8 +16,8 @@ export default function Post({ post }) {
 		thumbnail,
 		conclusionImage,
 		featuredImage,
-	} = post;
-	console.log(post);
+	} = gist;
+	console.log("me me me me meme", gist);
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">

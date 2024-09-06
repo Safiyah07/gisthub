@@ -4,18 +4,8 @@ import Link from "next/link";
 import Button from "../shared/Button";
 
 export default function GistData({ gist }) {
-	const {
-		title,
-		intro,
-		info,
-		time,
-		slug,
-		thumbnail,
-		conclusionImage,
-		featuredImage,
-	} = gist.fields;
-
-	console.log("From Gist Data Page", [gist]);
+	const { title, intro, time, slug, thumbnail } = gist.fields;
+	// console.log("From Gist Data Page", [gist]);
 
 	return (
 		<section className="relative">
