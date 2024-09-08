@@ -21,8 +21,8 @@ export default function Post({ gist }) {
 	console.log("me me me me meme", gist);
 
 	return (
-		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 text-lg dark:text-white p-4">
-			<div className="flex flex-col w-full gap-5 lg:w-4/5">
+		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 lg:w-4/5 w-full dark:text-white p-4">
+			<div className="flex flex-col w-full gap-5">
 				<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
 					{intro}
 				</h1>
@@ -85,7 +85,7 @@ export default function Post({ gist }) {
 
 			{/* Comment */}
 			<section className="w-full py-10">
-				<h1>Comments 2</h1>
+				<h1>Comments: 2</h1>
 				<br />
 				<textarea
 					name="comments"
@@ -93,14 +93,24 @@ export default function Post({ gist }) {
 					cols="30"
 					rows="10"
 					placeholder="Add Comments Here"
-					className="shadow-[-1px_1px_4px_0_rgba(0,0,0,0.5)] rounded-md w-full p-5"
+					className="shadow-[-1px_1px_4px_0_rgba(0,0,0,0.5)] rounded-md w-full p-5 outline-none"
 				></textarea>
 
-				<div className="flex items-center gap-2">
-					<div className="w-10 h-10">image</div>
+				<div className="flex gap-2">
+					<div className="w-10 h-10">
+						<Image
+							src={`https:${conclusionImage.fields.file.url}`}
+							width={conclusionImage.fields.file.details.image.width}
+							height={conclusionImage.fields.file.details.image.height}
+							alt="image4"
+							className="object-cover w-10 h-10 rounded-full"
+							priority
+						/>
+					</div>
 					<div>
-						<h4>Name</h4>
-						<p>comment</p>
+						<h4>Sola Adebisi Koka</h4>
+						<p>Thank you for this update AEDC, super informative</p>
+						<p>20th August 2024</p>
 					</div>
 				</div>
 				{/* {comments && (<div></div>)} */}
