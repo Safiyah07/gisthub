@@ -27,10 +27,10 @@ export default function Post({ gist }) {
 					{intro}
 				</h1>
 				<div className="flex gap-3 text-sm">
-					<p>From AEDC</p>
-					<p>-</p>
+					<p>
+						From AEDC <span>-</span> <span>{time}</span>
+					</p>
 					{/* <p>20th August 2024</p> */}
-					<p>{time}</p>
 				</div>
 				<p>
 					Electricity bills in Nigeria have been a recurring source of
@@ -50,7 +50,7 @@ export default function Post({ gist }) {
 						priority
 					/>
 				)}
-				<p>{documentToReactComponents(info)}</p>
+				<div>{documentToReactComponents(info)}</div>
 				{featuredImage && (
 					<Image
 						src={`https:${featuredImage.fields.file.url}`}
@@ -84,7 +84,7 @@ export default function Post({ gist }) {
 			</div>
 
 			{/* Comment */}
-			<section className="w-full py-10">
+			{/* <section className="w-full py-10">
 				<h1>Comments: 2</h1>
 				<br />
 				<textarea
@@ -96,7 +96,7 @@ export default function Post({ gist }) {
 					className="shadow-[-1px_1px_4px_0_rgba(0,0,0,0.5)] rounded-md w-full p-5 outline-none"
 				></textarea>
 
-				<div className="flex gap-2">
+				<div className="flex items-center gap-2">
 					<div className="w-10 h-10">
 						<Image
 							src={`https:${conclusionImage.fields.file.url}`}
@@ -113,8 +113,7 @@ export default function Post({ gist }) {
 						<p>20th August 2024</p>
 					</div>
 				</div>
-				{/* {comments && (<div></div>)} */}
-			</section>
+			</section> */}
 		</section>
 	);
 }
