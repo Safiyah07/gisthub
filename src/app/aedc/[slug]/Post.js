@@ -13,7 +13,7 @@ export default function Post({ gist }) {
 		intro,
 		info,
 		time,
-		// slug,
+		slug,
 		thumbnail,
 		conclusionImage,
 		featuredImage,
