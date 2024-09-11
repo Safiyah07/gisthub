@@ -9,7 +9,7 @@ const client = createClient({
 export async function generateStaticParams() {
 	try {
 		const response = await client.getEntries({
-			content_type: "gist",
+			content_type: "aedc",
 		});
 
 		const uniqueSlug = response.items;
@@ -28,11 +28,11 @@ export async function getBlog({ URL }) {
 	try {
 		const { slug } = URL;
 		const response = await client.getEntries({
-			content_type: "gist",
+			content_type: "aedc",
 			"fields.slug": slug,
 		});
 
-		const gist = response.items;
+		const gist = response.items[0];
 
 		if (!gist || gist.length === 0) {
 			return "no gist";

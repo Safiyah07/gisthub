@@ -10,7 +10,7 @@ export async function gisthub() {
 
 	try {
 		const response = await client.getEntries({
-			content_type: "gist",
+			content_type: "aedc",
 		});
 
 		if (!response.items) {

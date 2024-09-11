@@ -10,67 +10,56 @@ import Power5 from "../../../../public/power5.webp";
 export default function Post({ gist }) {
 	const {
 		title,
-		intro,
-		info,
-		time,
-		slug,
-		thumbnail,
+		date,
+		introPhrase,
+		introText,
+		introImage,
+		bodyText,
+		bodyImage,
+		conclusionText,
 		conclusionImage,
-		featuredImage,
-	} = gist[0].fields;
+	} = gist.fields;
 	console.log("me me me me meme", gist);
 
 	return (
-		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 lg:w-4/5 w-full dark:text-white p-4">
-			<div className="flex flex-col w-full gap-5">
-				<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
-					{intro}
-				</h1>
-				<div className="flex gap-3 text-sm">
-					<p>
-						From AEDC <span>-</span> <span>{time}</span>
-					</p>
-					{/* <p>20th August 2024</p> */}
+		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 lg:w-4/5 w-full dark:text-white leading-7 text-lg p-4">
+			<div className="flex flex-col w-full gap-10">
+				<div className="flex flex-col gap-2">
+					<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
+						{title}
+					</h1>
+					{/* <h4 className="font-medium text-black capitalize dark:text-white">
+						{introPhrase}
+					</h4> */}
+					<div className="flex gap-3 text-sm">
+						<p>
+							AEDC <span>-</span> <span>{date}</span>
+						</p>
+					</div>
 				</div>
-				<p>
-					Electricity bills in Nigeria have been a recurring source of
-					frustration for many households and businesses. The high cost of
-					electricity has significant implications for the economy, as it drives
-					up production costs and reduces disposable income. This article will
-					explore some of the key factors contributing to the high electricity
-					bills in Nigeria.
-				</p>
-				{thumbnail && (
+				<p>{introText}</p>
+				{introImage && (
 					<Image
-						src={`https:${thumbnail.fields.file.url}`}
-						width={thumbnail.fields.file.details.image.width}
-						height={thumbnail.fields.file.details.image.height}
-						alt="thumbnail"
+						src={`https:${introImage.fields.file.url}`}
+						width={introImage.fields.file.details.image.width}
+						height={introImage.fields.file.details.image.height}
+						alt="introImage"
 						className="object-cover h-[350px] w-auto shadow-[-1px_1px_4px_0_rgba(0,0,0,0.5)] rounded-md"
 						priority
 					/>
 				)}
-				<div>{documentToReactComponents(info)}</div>
-				{featuredImage && (
+				<div>{documentToReactComponents(bodyText)}</div>
+				{bodyImage && (
 					<Image
-						src={`https:${featuredImage.fields.file.url}`}
-						width={featuredImage.fields.file.details.image.width}
-						height={featuredImage.fields.file.details.image.height}
-						alt="featured image"
+						src={`https:${bodyImage.fields.file.url}`}
+						width={bodyImage.fields.file.details.image.width}
+						height={bodyImage.fields.file.details.image.height}
+						alt="body image"
 						className="object-cover h-[350px] w-auto shadow-[-1px_1px_4px_0_rgba(0,0,0,0.5)] rounded-md"
 						priority
 					/>
 				)}
-				<p>
-					{" "}
-					Conclusion: The high cost of electricity in Nigeria is a complex issue
-					with multiple contributing factors. Addressing these challenges will
-					require a comprehensive approach that involves investing in
-					infrastructure, improving efficiency, reducing corruption, and
-					implementing sound government policies. By addressing these issues,
-					Nigeria can work towards a more affordable and reliable electricity
-					supply for its citizens and businesses.
-				</p>
+				<p>{conclusionText}</p>
 				{conclusionImage && (
 					<Image
 						src={`https:${conclusionImage.fields.file.url}`}
