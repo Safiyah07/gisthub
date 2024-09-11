@@ -3,15 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Power1 from "../../../../public/power1.webp";
-import Power4 from "../../../../public/power4.webp";
-import Power5 from "../../../../public/power5.webp";
 
 export default function Post({ gist }) {
 	const {
 		title,
 		date,
-		introPhrase,
 		introText,
 		introImage,
 		bodyText,
@@ -19,7 +15,6 @@ export default function Post({ gist }) {
 		conclusionText,
 		conclusionImage,
 	} = gist.fields;
-	console.log("me me me me meme", gist);
 
 	return (
 		<section className="max-w-[100%] flex flex-col items-center m-auto lg:py-14 py-5 lg:w-4/5 w-full dark:text-white leading-7 text-lg p-4">
@@ -28,9 +23,6 @@ export default function Post({ gist }) {
 					<h1 className="text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl">
 						{title}
 					</h1>
-					{/* <h4 className="font-medium text-black capitalize dark:text-white">
-						{introPhrase}
-					</h4> */}
 					<div className="flex gap-3 text-sm">
 						<p>
 							AEDC <span>-</span> <span>{date}</span>
