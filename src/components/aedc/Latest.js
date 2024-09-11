@@ -17,10 +17,6 @@ export default function Latest({ gists }) {
 					Latest gist with AEDC
 				</h1>
 				<br />
-
-				{/* for waterboard page
-        Stay updated with the latest news from the Water Board, ensuring you never miss important information about water supply and distribution in your area. We provide timely updates on water rationing schedules, maintenance activities, and any service interruptions that might affect your daily routine. Our goal is to keep you well-informed about everything related to water services, so you can plan ahead and manage your resources effectively. Trust us to bring you reliable information directly from the Water Board, helping you stay prepared for any changes. */}
-
 				<p>
 					Stay connected with the latest updates from the Abuja Electricity
 					Distribution Company (AEDC). We bring you real-time information on

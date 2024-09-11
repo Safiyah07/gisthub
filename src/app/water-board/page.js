@@ -1,6 +1,6 @@
 import React from "react";
 import { createClient } from "contentful";
-import Display from "../../components/water/DisplayWater";
+import Display from "./../../components/water/Display";
 
 export async function gisthub() {
 	const client = createClient({
@@ -10,7 +10,7 @@ export async function gisthub() {
 
 	try {
 		const response = await client.getEntries({
-			content_type: "water-board",
+			content_type: "waterBoard",
 		});
 
 		if (!response.items) {
@@ -27,7 +27,7 @@ export async function gisthub() {
 export default async function page() {
 	const gistt = await gisthub();
 	return (
-		<div>
+		<div className="p-4">
 			<Display gists={gistt} />
 		</div>
 	);
