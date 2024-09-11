@@ -2,75 +2,12 @@
 
 import { Palanquin_Dark } from "next/font/google";
 import Link from "next/link";
-import Power1 from "../../../public/power1.webp";
-import Power2 from "../../../public/power2.webp";
-import Power3 from "../../../public/power3.webp";
-import Power4 from "../../../public/power4.webp";
-import Power5 from "../../../public/power5.webp";
-import Power7 from "../../../public/power7.webp";
 import Button from "./../shared/Button";
 import GistData from "./GistData";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
 export default function Latest({ gists }) {
-	const blogs = [
-		{
-			img: Power1,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power4,
-			header: "The Future of Energy",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power5,
-			header: "The Importance of Energy Conservation",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power3,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power7,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power5,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power1,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power4,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-		{
-			img: Power2,
-			header: "Understanding Your Electricity Bill",
-			text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.	Repellat, id?",
-			date: "20th August 2024",
-		},
-	];
-
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">
 			<div>

@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../shared/Button";
+import Button from "@/components/shared/Button";
 
-export default function GistData({ gist }) {
+export default function DisplayWater({ gist }) {
 	const { title, introPhrase, date, slug, introImage } = gist.fields;
 
 	return (
