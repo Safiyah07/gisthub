@@ -25,7 +25,7 @@ export default function Post({ gist }) {
 					</h1>
 					<div className="flex gap-3 text-sm">
 						<p>
-							AEDC <span>-</span> <span>{date}</span>
+							Water Board <span>-</span> <span>{date}</span>
 						</p>
 					</div>
 				</div>
