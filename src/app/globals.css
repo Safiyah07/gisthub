@@ -10,6 +10,35 @@ html {
 body {
 	background: #fffef9;
 }
+
+.hover-link {
+	position: relative;
+	background-color: transparent;
+}
+
+.hover-link:hover::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 30px;
+	height: 100%;
+	width: 100%;
+	background-color: #ff914d;
+	z-index: -1;
+	animation: button 0.3s ease-in-out;
+}
+
+@keyframes button {
+	from {
+		width: 0;
+		border-top-right-radius: 50%;
+	}
+	to {
+		width: 100%;
+		border-top-right-radius: 30px;
+	}
+}
 /* :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;

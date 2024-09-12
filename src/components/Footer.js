@@ -102,7 +102,7 @@ export default function Footer() {
 						</h1>
 					</section>
 				</div>
-				<p className="mt-10 mb-5">
+				<p className="mt-10 mb-5 lg:text-end md:text-center">
 					copyright &copy; {new Date().getFullYear()}. All Rights Reserved
 					Gisthub
 				</p>

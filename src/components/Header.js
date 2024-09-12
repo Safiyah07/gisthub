@@ -18,7 +18,7 @@ export default function Header() {
 	const menuItems = [
 		{
 			id: 1,
-			title: "power (aedc)",
+			title: "power (AEDC)",
 			link: "aedc",
 		},
 		{
