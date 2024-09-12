@@ -19,7 +19,7 @@ export default function DisplayWater({ gist }) {
 			</div>
 
 			<Link
-				href={`/aedc/${slug}`}
+				href={`/water-board/${slug}`}
 				className="absolute inset-0 text-white transition-all duration-300 ease-in-out rounded-md lg:opacity-0 bg-black/70 lg:hover:opacity-100"
 			>
 				<div className="flex flex-col justify-between h-full p-5">
