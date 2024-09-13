@@ -41,7 +41,7 @@ export default function Header() {
 		>
 			<Link
 				href="/"
-				className="z-20 w-40 sm:w-32"
+				className="z-20 w-36 sm:w-32"
 			>
 				<Image
 					src={Logo}

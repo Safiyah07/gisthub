@@ -1,23 +1,38 @@
 "use client";
 
+import { useEffect } from "react";
 import { Palanquin_Dark } from "next/font/google";
 import Link from "next/link";
+import { gsap } from "gsap";
 import Button from "./../shared/Button";
 import GistData from "./GistData";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
 export default function Latest({ gists }) {
+	useEffect(() => {
+		gsap.fromTo(
+			".fade",
+			{ opacity: 0, duration: 0, y: 40 },
+			{
+				y: 0,
+				opacity: 1,
+				duration: 0.7,
+				stagger: 0.5,
+			}
+		);
+	}, []);
+
 	return (
 		<section className="flex flex-col gap-10 sm:gap-5">
 			<div>
 				<h1
-					className={`${palanquin.className} text-4xl font-semibold text-black capitalize dark:text-white md:text-3xl sm:text-2xl mt-5`}
+					className={`${palanquin.className} text-4xl font-semibold text-text capitalize dark:text-white md:text-3xl sm:text-2xl mt-5 fade`}
 				>
 					Latest gist with AEDC
 				</h1>
 				<br />
-				<p>
+				<p className="text-grey fade">
 					Stay connected with the latest updates from the Abuja Electricity
 					Distribution Company (AEDC). We bring you real-time information on
 					power supply schedules, planned outages, and emergency maintenance

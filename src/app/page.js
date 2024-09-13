@@ -31,26 +31,15 @@ export default function Home() {
 				stagger: 0.5,
 			}
 		);
-
-		gsap.to(
-			".imageText",
-			// { hover: { opacity: 0, duration: 0, y: 40 } },
-			{
-				y: 50,
-				duration: 0.5,
-			}
-			// delay: 0.5,
-			// ease: "back.out",
-			// repeat: -1,
-			// yoyo: true,
-		);
 	}, []);
 
 	return (
 		<section className="flex flex-col gap-10 px-10 py-16 text-center sm:px-5">
 			{/* text */}
 			<div className="m-auto overflow-hidden text-xl text-center lg:w-3/5">
-				<h1 className={`${palanquin.className} fade lg:text-[2rem] mb-5`}>
+				<h1
+					className={`${palanquin.className} fade lg:text-[2rem] mb-5 text-text dark:text-white`}
+				>
 					What&apos;s the scoop you&apos;re after today?
 				</h1>
 				<p className="w-3/4 m-auto fade text-grey sm:w-full sm:text-lg">
