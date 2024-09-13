@@ -69,7 +69,7 @@ export default function Home() {
 						style={{ textShadow: "3px 1px 5px black" }}
 						className="absolute inset-0 flex items-center justify-center text-5xl font-medium text-white lg:text-7xl"
 					>
-						<p className="imageText fade">Power (AEDC)</p>
+						<p className="fade">Power (AEDC)</p>
 					</Link>
 				</div>
 				<div className="relative w-full lg:w-[49%] shadow-3xl rounded-lg transition-all ease-in-out duration-700">
@@ -80,7 +80,7 @@ export default function Home() {
 						style={{ textShadow: "3px 1px 5px black" }}
 						className="absolute inset-0 flex items-center justify-center text-5xl font-medium text-white lg:text-7xl"
 					>
-						<p className="imageText fade">Water Board</p>
+						<p className="fade">Water Board</p>
 					</Link>
 				</div>
 			</div>
