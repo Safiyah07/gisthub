@@ -37,7 +37,7 @@ export default function Header() {
 	return (
 		<div
 			id="top"
-			className={`flex justify-between p-4 border-b items-center`}
+			className={`flex justify-between py-3 px-4 border-b items-center`}
 		>
 			<Link
 				href="/"
