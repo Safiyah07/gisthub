@@ -32,11 +32,9 @@ body {
 @keyframes button {
 	from {
 		width: 0;
-		border-top-right-radius: 50%;
 	}
 	to {
 		width: 100%;
-		border-top-right-radius: 30px;
 	}
 }
 /* :root {
