@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { Palanquin_Dark } from "next/font/google";
