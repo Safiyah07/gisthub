@@ -33,14 +33,13 @@ export default function Latest({ gists }) {
 				</h1>
 				<br />
 				<p className="text-grey fade">
-					Stay connected with the latest updates from the Abuja Electricity
-					Distribution Company (AEDC). We bring you real-time information on
-					power supply schedules, planned outages, and emergency maintenance
-					activities across the region. Our updates ensure you&apos;re always
-					aware of any changes that might affect your electricity service,
-					helping you manage your energy needs efficiently. Whether it&apos;s a
-					new initiative from AEDC or important alerts on service disruptions,
-					we&apos;re here to keep you informed and empowered.
+					Bringing you real-time information on power supply schedules, planned
+					outages, and emergency maintenance activities across the region. Our
+					updates ensure you&apos;re always aware of any changes that might
+					affect your electricity service, helping you manage your energy needs
+					efficiently. Whether it&apos;s a new initiative from AEDC or important
+					alerts on service disruptions, we&apos;re here to keep you informed
+					and empowered.
 				</p>
 			</div>
 

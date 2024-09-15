@@ -37,7 +37,7 @@ export async function getBlog({ URL }) {
 		if (!gist || gist.length === 0) {
 			return "no gist";
 		} else {
-			console.log("Gist is", gist);
+			// console.log("Gist is", gist);
 			return gist;
 		}
 	} catch (error) {
@@ -49,7 +49,7 @@ export async function getBlog({ URL }) {
 export default async function Page({ params }) {
 	const URL = params;
 	const gist = await getBlog({ URL });
-	console.log("returning gist", gist);
+	// console.log("returning gist", gist);
 
 	return <Post gist={gist} />;
 }
