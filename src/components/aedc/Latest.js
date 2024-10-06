@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { Palanquin_Dark } from "next/font/google";
-import Link from "next/link";
+// import Link from "next/link";
 import { gsap } from "gsap";
-import Button from "./../shared/Button";
+// import Button from "./../shared/Button";
 import GistData from "./GistData";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
@@ -51,12 +51,12 @@ export default function Latest({ gists }) {
 					/>
 				))}
 			</div>
-			<Link
+			{/* <Link
 				href="/"
 				className="flex justify-end sm:justify-center"
 			>
 				<Button>Load More</Button>
-			</Link>
+			</Link> */}
 		</section>
 	);
 }

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import { Palanquin_Dark } from "next/font/google";
 import gsap from "gsap";
 import DisplayWater from "./DisplayWater";
-import Button from "../shared/Button";
+// import Button from "../shared/Button";
 
 const palanquin = Palanquin_Dark({ weight: "400", subsets: ["latin"] });
 
@@ -51,12 +51,12 @@ export default function Display({ gists }) {
 					/>
 				))}
 			</div>
-			<Link
+			{/* <Link
 				href="/"
 				className="flex justify-end sm:justify-center"
 			>
 				<Button>Load More</Button>
-			</Link>
+			</Link> */}
 		</section>
 	);
 }
