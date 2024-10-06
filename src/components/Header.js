@@ -41,7 +41,7 @@ export default function Header() {
 		>
 			<Link
 				href="/"
-				className="z-20 w-36 sm:w-32"
+				className="z-30 w-36 sm:w-32"
 			>
 				<Image
 					src={Logo}
@@ -52,7 +52,7 @@ export default function Header() {
 
 			{/* Hamburger for mobile */}
 			<div className="hidden sm:block">
-				<div className="relative z-20 cursor-pointer">
+				<div className="relative z-30 cursor-pointer">
 					{showMenu ? (
 						<Hamburger
 							toggled={!showMenu}
@@ -72,7 +72,7 @@ export default function Header() {
 					onClick={menuDisplay}
 					className={`${
 						showMenu ? "-right-full" : " right-0"
-					} py-5 px-16 md:px-10 sm:px-4 bg-white dark:bg-black w-full text-xl flex justify-center flex-col transition-all ease-in-out duration-500 absolute z-10 h-svh top-0`}
+					} py-5 px-16 md:px-10 sm:px-4 bg-white dark:bg-black w-full text-xl flex justify-center flex-col transition-all ease-in-out duration-500 absolute z-20 h-svh top-0`}
 				>
 					{menuItems.map((Item) => (
 						<li
